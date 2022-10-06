@@ -4,6 +4,7 @@ import java.util.*;
 import java.util.regex.Pattern;
 
 public class CharacterCounterImpl implements CharacterCounter {
+    
     private static Pattern numbers = Pattern.compile("[0-9]+");
 
     @Override
@@ -13,7 +14,7 @@ public class CharacterCounterImpl implements CharacterCounter {
 
         var charsFrequency = new HashMap<String, Integer>();
 
-        lines.forEach( line ->
+        lines.forEach(line ->
             Arrays.stream(line.split(""))
                     .filter(ch -> !numbers.matcher(ch).matches() && !ch.equals(" "))
                     .map(ch -> {
